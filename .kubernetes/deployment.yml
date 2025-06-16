@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-guga
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app-guga
+  template:
+    metadata:
+      labels:
+        app: app-guga
+    spec:
+      containers:
+        - name: app-guga
+          image: kurtzz171/yt:latest
+          ports:
+            - containerPort: 3001
+    
